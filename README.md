@@ -13,7 +13,7 @@ In this section, the linear model for exchange rates between two arbirary countr
 
 where $i$ and $S$ is the interest rate and the exchange rate, respectively. $n$ denotes a period and in this particular case, is month.
 
-![interest rate vs exchange rate](interest_exchange_rate.png)
+![interest rate vs exchange rate](interest_exchange_rate.png | width=400)
 
 From the figure above, we can see the strong correlation between the interest rate and the exchange rate, despite the fluctuations in the function of the exchange rate function $\mathrm{ln} \frac{S_n}{S_{n+1}}$. One apparent discrepancy is observed in the year 2008 when a global economic crisis occurred.
 
@@ -35,6 +35,6 @@ def get_selected_hist(stocks)
 ```
 > Grab historical data for some stocks using a list of codes or symbols
 
-![An example plot](example_plot.png)
+![An example plot](example_plot.png | width=400)
 ## dependencies
 <mark>*numpy and pandas*</mark>
