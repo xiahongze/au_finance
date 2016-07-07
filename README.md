@@ -19,7 +19,9 @@ From the figure above, we can see the strong correlation between the interest ra
 
 ## stock
 
-`yahoo_finance.py` contains useful functions to grab data from <mark>Yahoo Finance</mark> and return the result as pandas.DataFrame.
+`yahoo_finance.py` contains useful functions to grab data from  and return the result as pandas.DataFrame.
+
+`pplot` can visualise the OHLC and volume data retrieved from <i>Yahoo Finance</i> and analyse with the moving average.
 
 `ASXListedCompanies.pckl` is a pandas.DataFrame that contains the names, symbols and the sectors of the listed companies.
 
