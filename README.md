@@ -38,5 +38,25 @@ def get_selected_hist(stocks)
 > Grab historical data for some stocks using a list of codes or symbols
 
 <img src="example_plot.png" width=400>
+
+`market_structure.py` contains functions to visualize market structures of a collection of stocks. This module requires sklearn (Python machine learning package) to categorise market data. This idea here is to use the daily variation of individual stocks and find out which stocks are usually varying together. By calling `covariance.GraphLassoCV`, we obtain a graphical represenation of the correlation patterns. Then, with `cluster.affinity_propagation` the program automatically decides the number of clusters and print out the results. To visualize the data, we choose to use a 2D representation because it is more human-friendly and with `manifold` the dimension of the data is reduced to 2D.
+
+```python
+def discover_clusters(var)
+```
+> input the covariance and return labels of clusters and partial correlations that can be used in plotting
+
+```python
+def get_low_dim_embedding(X, n_neighbors=4)
+```
+> get a low dimension representation using X as the N by N matrix
+
+```python
+def plot_market_structure(names, labels, embedding, partial_correlations)
+```
+> the plotting function
+
+<img src="market_structure_1.png" width=400>
+<img src="market_structure_2.png" width=400>
 ## dependencies
-<mark>*numpy and pandas*</mark>
+<mark>*numpy, pandas and scikit-learn*</mark>

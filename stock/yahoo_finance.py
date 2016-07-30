@@ -40,7 +40,7 @@ def get_histdata(symbol,startDate="1990-01-01",endDate=None):
         print "Couldn't find this stock at Yahoo Finance or banned by Yahoo somehow!"
         return None
 
-def get_selected_hist(stocks):
+def get_selected_hist(stocks=None, startDate="1990-01-01"):
     """
     stocks: list of string,integer or just str and int
         a list of AXS stock codes/symbols
@@ -49,18 +49,18 @@ def get_selected_hist(stocks):
         a dictionary
     """
     if type(stocks) is list:
-        if type(stocks[0]) is str:
+        if type(stocks[0]) is str or type(stocks[0]) is unicode:
             alist = stocks
         elif type(stocks[0]) is int:
             alist = stockAXS.index[stocks]
-    elif type(stocks) is str:
+    elif type(stocks) is str or type(stocks[0]) is unicode:
         alist = [stocks]
     elif type(stocks) is int:
         alist = [stockAXS.index[stocks]]
     elif stocks is None:
         alist = stockAXS.index
     
-    return {s:get_histdata(s) for s in alist}
+    return {s:get_histdata(s, startDate=startDate) for s in alist}
 
 def print_stock_info(stocks):
     print stockAXS.loc[stocks]
